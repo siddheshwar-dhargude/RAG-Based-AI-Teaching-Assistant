@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduRAG AI - Teaching Assistant</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ================= LOGIN ================= -->
+<section id="loginPage" class="login-page">
+
+    <div class="login-left">
+        <div class="brand">✦ EduRAG AI</div>
+
+        <div class="hero-content">
+            <span class="tag">SMART LEARNING PLATFORM</span>
+            <h1>Learn smarter with<br><span>Artificial Intelligence.</span></h1>
+            <p>Teachers upload materials and publish AI-generated quizzes. Students take them instantly and get help from an AI tutor that knows the course.</p>
+            <div class="feature">✓ AI quiz generation from your own documents</div>
+            <div class="feature">✓ Quizzes appear on student dashboards instantly</div>
+            <div class="feature">✓ Always-on AI tutor for any question</div>
+        </div>
+
+        <p class="copyright">© 2026 EduRAG AI. All rights reserved.</p>
+    </div>
+
+    <div class="login-right">
+        <div class="login-box">
+            <div class="mobile-brand">✦ EduRAG AI</div>
+
+            <!-- SIGN IN -->
+            <div id="signInSection">
+                <h2>Welcome back!</h2>
+                <p class="subheading">Sign in to continue to your workspace.</p>
+
+                <div class="role-selector">
+                    <button type="button" class="role active" data-role="student">🎓 Student</button>
+                    <button type="button" class="role" data-role="teacher">👨‍🏫 Teacher</button>
+                </div>
+
+                <form id="loginForm">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="Enter your email" required>
+
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter your password" required>
+
+                
+          <div class="form-options">
+            <label class="remember">
+            <input type="checkbox" id="remember" checked>
+                Remember me
+            </label>
+
+    <a href="#" id="forgotPasswordLink">Forgot Password?</a>
+</div>
+
+
+                    <p id="loginError" class="form-error hidden"></p>
+
+                    <button class="login-btn" type="submit" id="loginBtn">Sign In <span>→</span></button>
+                </form>
+
+                <div id="googleBlock" class="hidden">
+                    <div class="divider"><span>OR</span></div>
+                    <div class="google-login"><div id="googleButton"></div></div>
+                </div>
+
+                <p class="auth-switch">Don't have an account?
+                    <a href="#" id="toRegister">Create Account</a>
+                </p>
+            </div>
+
+            <!-- CREATE ACCOUNT -->
+            <div id="createAccountSection" class="hidden">
+                <h2>Create Account</h2>
+                <p class="subheading">Join EduRAG AI and start your learning journey.</p>
+
+                <div class="role-selector">
+                    <button type="button" class="role active" data-role="student">🎓 Student</button>
+                    <button type="button" class="role" data-role="teacher">👨‍🏫 Teacher</button>
+                </div>
+
+                <form id="registerForm">
+                    <label for="registerName">Full Name</label>
+                    <input type="text" id="registerName" placeholder="Enter your full name" required>
+
+                    <label for="registerEmail">Email Address</label>
+                    <input type="email" id="registerEmail" placeholder="Enter your email" required>
+
+                    <label for="registerPassword">Password</label>
+                    <input type="password" id="registerPassword" placeholder="At least 8 characters" minlength="8" required>
+
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" placeholder="Confirm your password" minlength="8" required>
+
+                    <div id="teacherCodeWrap" class="hidden">
+                        <label for="teacherCode">Teacher Access Code</label>
+                        <input type="password" id="teacherCode" placeholder="Ask your administrator">
+                    </div>
+
+                    <p id="registerError" class="form-error hidden"></p>
+
+                    <button class="login-btn" type="submit" id="registerBtn">Create Account <span>→</span></button>
+                </form>
+
+                <p class="auth-switch">Already have an account?
+                    <a href="#" id="toSignIn">Sign In</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ================= APP ================= -->
+<section id="appPage" class="app-page hidden">
+
+    <aside class="sidebar">
+        <div class="brand">✦ EduRAG AI</div>
+
+        <div class="profile">
+            <div class="avatar" id="avatar">S</div>
+            <div>
+                <h4 id="userName">Student</h4>
+                <small id="userRole">Student Account</small>
+            </div>
+        </div>
+
+        <p class="menu-heading">MENU</p>
+
+        <button class="menu-item active" data-page="dashboard">▦ Dashboard</button>
+
+        <button class="menu-item" data-page="quizzes" data-for="student">📝 Quizzes <span id="quizBadge" class="badge hidden">0</span></button>
+        <button class="menu-item" data-page="results" data-for="student">🏆 My Results</button>
+
+        <button class="menu-item" data-page="studio" data-for="teacher">✨ Create Quiz</button>
+        <button class="menu-item" data-page="myquizzes" data-for="teacher">📋 My Quizzes</button>
+
+        <button class="menu-item" data-page="documents">▤ Documents</button>
+        <button class="menu-item" data-page="chat">✦ AI Assistant</button>
+        <button class="menu-item" data-page="history">◷ Chat History</button>
+
+        <div class="sidebar-bottom">
+            <button class="logout-btn" id="logoutBtn">↪ Logout</button>
+        </div>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <div>
+                <h3 id="pageTitle">Dashboard</h3>
+                <p>Your learning workspace</p>
+            </div>
+            <div class="top-profile">
+                <button class="bell" id="bellBtn" title="Notifications" aria-label="Notifications">🔔<span id="bellBadge" class="badge bell-badge hidden">0</span></button>
+                <div class="avatar small" id="topAvatar">S</div>
+            </div>
+        </header>
+
+        <!-- DASHBOARD -->
+        <div id="dashboardPage" class="content-page">
+            <div class="welcome-card">
+                <div>
+                    <span class="tag" id="welcomeTag">YOUR AI LEARNING PARTNER</span>
+                    <h1>Hello, <span id="welcomeName">Student</span>! 👋</h1>
+                    <p id="welcomeMessage">How can I help you learn today?</p>
+                    <button id="welcomeBtn">Start Learning →</button>
+                </div>
+                <div class="welcome-icon">✦</div>
+            </div>
+
+            <div class="stats" id="statsGrid"></div>
+
+            <h3 class="section-title" id="quickTitle">Quick Actions</h3>
+            <div class="quick-actions" id="quickActions"></div>
+
+            <div class="dash-grid" id="dashPanels"></div>
+        </div>
+
+        <!-- STUDENT: QUIZZES -->
+        <div id="quizzesPage" class="content-page hidden">
+            <div id="quizListView">
+                <h2>Available Quizzes</h2>
+                <p class="muted">Quizzes published by your teachers appear here automatically.</p>
+                <div id="quizList"></div>
+            </div>
+
+            <div id="quizRunner" class="hidden"></div>
+        </div>
+
+        <!-- STUDENT: RESULTS -->
+        <div id="resultsPage" class="content-page hidden">
+            <h2>My Results</h2>
+            <p class="muted">Every quiz attempt you have submitted.</p>
+            <div id="resultsList"></div>
+        </div>
+
+        <!-- TEACHER: STUDIO -->
+        <div id="studioPage" class="content-page hidden">
+            <h2>Create a Quiz with AI</h2>
+            <p class="muted">Generate questions from your uploaded materials, review and edit them, then publish to every student.</p>
+
+            <div class="panel-card">
+                <div class="form-grid">
+                    <div class="field wide">
+                        <label for="quizTopic">Topic</label>
+                        <input id="quizTopic" placeholder="e.g. Photosynthesis, SQL Joins, Newton's Laws">
+                    </div>
+                    <div class="field">
+                        <label for="quizCount">Questions</label>
+                        <input id="quizCount" type="number" min="1" max="20" value="5">
+                    </div>
+                    <div class="field">
+                        <label for="quizDifficulty">Difficulty</label>
+                        <select id="quizDifficulty">
+                            <option>Easy</option>
+                            <option selected>Medium</option>
+                            <option>Hard</option>
+                        </select>
+                    </div>
+                    <div class="field wide">
+                        <label for="quizSource">Source</label>
+                        <select id="quizSource">
+                            <option value="materials">My uploaded study materials</option>
+                            <option value="topic">Topic only (AI general knowledge)</option>
+                        </select>
+                    </div>
+                </div>
+                <p id="studioError" class="form-error hidden"></p>
+                <button class="btn btn-primary" id="generateBtn">✨ Generate Quiz</button>
+            </div>
+
+            <div id="quizPreview"></div>
+        </div>
+
+        <!-- TEACHER: MY QUIZZES -->
+        <div id="myquizzesPage" class="content-page hidden">
+            <div id="myQuizzesView">
+                <h2>My Quizzes</h2>
+                <p class="muted">Manage published quizzes and see how your students are doing.</p>
+                <div id="myQuizList"></div>
+            </div>
+            <div id="quizResultsView" class="hidden"></div>
+        </div>
+
+        <!-- AI CHAT (full page) -->
+        <div id="chatPage" class="content-page hidden chat-page">
+            <div class="chat-heading">
+                <div class="ai-icon">✦</div>
+                <div>
+                    <h2>AI Teaching Assistant</h2>
+                    <p>Ask about your study materials, or any problem at all</p>
+                </div>
+                <button class="btn btn-ghost small-btn push-right" id="newChatBtn">↺ New chat</button>
+            </div>
+
+            <div id="chatMessages" class="chat-messages"></div>
+
+            <div class="suggestions" id="chatSuggestions"></div>
+
+            <div class="chat-input">
+                <input id="question" placeholder="Ask anything about your studies...">
+                <button id="chatSend">➤</button>
+            </div>
+            <p class="disclaimer">AI-generated answers may contain errors. Verify important information.</p>
+        </div>
+
+        <!-- DOCUMENTS -->
+        <div id="documentsPage" class="content-page hidden">
+            <h2>Study Documents</h2>
+            <p class="muted" id="docsSubtitle">Learning resources used by the AI assistant.</p>
+            <div class="panel-card" style="margin-bottom:20px;">
+    <h3>📚 Manage Subjects</h3>
+
+    <div class="form-grid">
+        <div class="field">
+            <label for="subjectSelect">Select Subject</label>
+            <select id="subjectSelect"></select>
+        </div>
+
+        <div class="field">
+            <label for="newSubjectInput">Add Custom Subject</label>
+            <input
+                type="text"
+                id="newSubjectInput"
+                placeholder="Enter subject name"
+            >
+        </div>
+    </div>
+
+    <button
+        type="button"
+        class="btn btn-primary"
+        id="addSubjectBtn"
+        style="margin-top:12px;"
+    >
+        + Add Subject
+    </button>
+</div>
+
+            <div class="upload-box" id="uploadBox">
+                <div style="font-size:40px">☁</div>
+                <h3>Upload Study Materials</h3>
+                <p>Choose PDF, DOCX, TXT or PPTX files (max 20 MB each)</p>
+                <input type="file" id="fileInput" accept=".pdf,.docx,.txt,.pptx" multiple>
+            </div>
+
+            <h3 class="section-title">Uploaded Documents</h3>
+            <div id="documentList"></div>
+        </div>
+
+        <!-- CHAT HISTORY -->
+        <div id="historyPage" class="content-page hidden">
+            <h2>Chat History</h2>
+            <p class="muted">Click a question to ask it again.</p>
+            <div id="historyList" class="history-list"></div>
+        </div>
+
+    </main>
+
+    <!-- FLOATING CHATBOT (bottom-right) -->
+    <button id="botFab" class="bot-fab" aria-label="Open AI assistant" title="Ask the AI assistant">✦</button>
+
+    <div id="botPanel" class="bot-panel hidden" role="dialog" aria-label="AI assistant">
+        <div class="bot-head">
+            <div>
+                <b>✦ EduRAG Assistant</b>
+                <small>Ask me anything</small>
+            </div>
+            <div>
+                <button id="botNew" title="New chat">↺</button>
+                <button id="botClose" title="Close">✕</button>
+            </div>
+        </div>
+        <div id="botMessages" class="bot-messages"></div>
+        <div class="bot-chips" id="botChips"></div>
+        <div class="bot-input">
+            <input id="botInput" placeholder="Type your question...">
+            <button id="botSend">➤</button>
+        </div>
+    </div>
+
+    <div id="toasts" class="toasts"></div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,1285 @@
+/* =========================================
+   1. GLOBAL SETTINGS
+========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', Arial, sans-serif;
+    background: #f6f7fb;
+    color: #202438;
+}
+
+button {
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+/* =========================================
+   2. LOGIN PAGE
+========================================= */
+
+.login-page {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+/* Left section */
+
+.login-left {
+    background: linear-gradient(140deg, #17143d, #5144a9);
+    color: #fff;
+    padding: 55px 9%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.brand {
+    font-size: 23px;
+    font-weight: 800;
+    letter-spacing: -.8px;
+}
+
+.hero-content {
+    max-width: 510px;
+}
+
+.tag {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #a9a1ff;
+    font-weight: 700;
+}
+
+.hero-content h1 {
+    font-size: clamp(32px, 4vw, 53px);
+    line-height: 1.2;
+    margin: 22px 0;
+}
+
+.hero-content h1 span {
+    color: #a99eff;
+}
+
+.hero-content p {
+    color: #d0ccef;
+    line-height: 1.9;
+    font-size: 14px;
+    margin-bottom: 28px;
+}
+
+.feature {
+    margin: 17px 0;
+    font-size: 14px;
+}
+
+.feature:first-letter {
+    color: #9dffca;
+}
+
+.copyright {
+    font-size: 12px;
+    color: #b6b1d6;
+}
+
+
+/* Right section */
+
+.login-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 35px;
+    background: #fff;
+}
+
+.login-box {
+    width: 100%;
+    max-width: 420px;
+}
+
+.login-box h2 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.subheading,
+.muted {
+    color: #85899c;
+    font-size: 13px;
+    margin-bottom: 25px;
+}
+
+.mobile-brand {
+    display: none;
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 30px;
+    color: #5144a9;
+}
+
+
+/* =========================================
+   3. ROLE SELECTION
+========================================= */
+
+.role-selector {
+    display: flex;
+    background: #f1f1f7;
+    padding: 5px;
+    border-radius: 10px;
+    margin-bottom: 28px;
+    position: relative;
+    z-index: 2;
+}
+
+.role {
+    flex: 1;
+    border: 0;
+    padding: 13px;
+    border-radius: 8px;
+    background: transparent;
+    font-weight: 600;
+    color: #72758b;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+    z-index: 3;
+}
+
+.role:hover {
+    color: #5949bb;
+}
+
+.role.active {
+    background: #fff;
+    color: #5949bb;
+    box-shadow: 0 2px 8px #00000012;
+}
+
+.role:focus-visible {
+    outline: 2px solid #6554ce;
+    outline-offset: 2px;
+}
+
+
+/* =========================================
+   4. EMAIL LOGIN & REGISTRATION FORMS
+========================================= */
+
+.login-box form label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 9px;
+}
+
+.login-box form input {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #e1e2eb;
+    border-radius: 9px;
+    outline: none;
+    margin-bottom: 20px;
+    font-family: inherit;
+}
+
+.login-box form input:focus {
+    border-color: #6554ce;
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11px;
+    margin-bottom: 22px;
+}
+
+.remember {
+    display: flex !important;
+    align-items: center;
+    gap: 6px;
+    font-weight: 400 !important;
+}
+
+.remember input {
+    width: auto !important;
+    margin: 0 !important;
+}
+
+.form-options a {
+    color: #6554ce;
+    text-decoration: none;
+}
+
+
+/* Sign in and Create Account buttons */
+
+.login-btn {
+    width: 100%;
+    background: #5949bb;
+    color: #fff;
+    padding: 15px;
+    border: 0;
+    border-radius: 9px;
+    font-weight: 700;
+    font-size: 14px;
+    box-shadow: 0 5px 14px #5949bb30;
+}
+
+.login-btn span {
+    float: right;
+}
+
+.login-btn:hover {
+    background: #4939a6;
+}
+
+
+/* =========================================
+   5. OR DIVIDER
+========================================= */
+
+.divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #a0a2b0;
+    font-size: 11px;
+    margin: 25px 0;
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+    height: 1px;
+    background: #e9e9ef;
+    flex: 1;
+}
+
+
+/* =========================================
+   6. GOOGLE SIGN-IN
+========================================= */
+
+.google-login {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    min-height: 44px;
+}
+
+#googleButton {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.login-note {
+    text-align: center;
+    font-size: 11px;
+    color: #9294a6;
+    margin-top: 15px;
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   7. CREATE ACCOUNT LINK
+========================================= */
+
+.auth-switch {
+    text-align: center;
+    font-size: 12px;
+    color: #85899c;
+    margin-top: 22px;
+}
+
+.auth-switch a {
+    color: #5949bb;
+    font-weight: 700;
+    text-decoration: none;
+    margin-left: 4px;
+}
+
+.auth-switch a:hover {
+    text-decoration: underline;
+}
+
+
+/* Registration form */
+
+#createAccountSection h2 {
+    margin-bottom: 10px;
+}
+
+#createAccountSection .role-selector {
+    margin-bottom: 22px;
+}
+
+#createAccountSection form input {
+    margin-bottom: 16px;
+}
+
+#createAccountSection .login-btn {
+    margin-top: 5px;
+}
+
+
+/* =========================================
+   8. APPLICATION DASHBOARD
+========================================= */
+
+.app-page {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 250px;
+    background: #191737;
+    color: #fff;
+    padding: 25px 18px;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 38px 0;
+}
+
+.profile h4 {
+    font-size: 13px;
+}
+
+.profile small {
+    color: #aaa6c6;
+    font-size: 11px;
+}
+
+.avatar {
+    background: #7162dc;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-weight: 700;
+}
+
+.avatar.small {
+    width: 34px;
+    height: 34px;
+}
+
+
+/* Sidebar menu */
+
+.menu-heading {
+    color: #918ba9;
+    font-size: 10px;
+    letter-spacing: 2px;
+    margin: 5px 10px 15px;
+}
+
+.menu-item {
+    width: 100%;
+    padding: 14px;
+    background: transparent;
+    border: 0;
+    color: #c3c0d6;
+    text-align: left;
+    border-radius: 8px;
+    margin: 4px 0;
+    font-size: 13px;
+}
+
+.menu-item.active,
+.menu-item:hover {
+    background: #39336d;
+    color: #fff;
+}
+
+.sidebar-bottom {
+    margin-top: auto;
+}
+
+.logout-btn {
+    width: 100%;
+    padding: 13px;
+    border: 0;
+    background: #302c55;
+    color: #fff;
+    border-radius: 8px;
+}
+
+
+/* =========================================
+   9. HEADER & DASHBOARD
+========================================= */
+
+.main-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.topbar {
+    height: 80px;
+    background: #fff;
+    border-bottom: 1px solid #eeeef4;
+    padding: 15px 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.topbar h3 {
+    font-size: 16px;
+}
+
+.topbar p {
+    font-size: 11px;
+    color: #9294a6;
+    margin-top: 5px;
+}
+
+.top-profile {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.content-page {
+    padding: 35px;
+}
+
+.welcome-card {
+    padding: 35px;
+    border-radius: 16px;
+    background: linear-gradient(120deg, #342b79, #7161dc);
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.welcome-card .tag {
+    color: #c3bcff;
+}
+
+.welcome-card h1 {
+    font-size: 29px;
+    margin: 17px 0;
+}
+
+.welcome-card p {
+    color: #e0ddff;
+    font-size: 13px;
+}
+
+.welcome-card button {
+    margin-top: 22px;
+    padding: 12px 20px;
+    background: #fff;
+    color: #493aab;
+    border: 0;
+    border-radius: 8px;
+    font-weight: 700;
+}
+
+.welcome-icon {
+    font-size: 100px;
+    color: #c1b9ff;
+}
+
+
+/* =========================================
+   10. DASHBOARD STATISTICS
+========================================= */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin: 28px 0;
+}
+
+.stat-card,
+.action-card {
+    padding: 23px;
+    background: #fff;
+    border: 1px solid #ededf3;
+    border-radius: 12px;
+}
+
+.stat-card span,
+.action-card span {
+    font-size: 25px;
+}
+
+.stat-card h2 {
+    font-size: 26px;
+    margin: 12px 0 5px;
+}
+
+.stat-card p,
+.action-card p {
+    font-size: 12px;
+    color: #9294a6;
+}
+
+.section-title {
+    font-size: 17px;
+    margin: 28px 0 16px;
+}
+
+.quick-actions {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 17px;
+}
+
+.action-card {
+    cursor: pointer;
+}
+
+.action-card:hover {
+    border-color: #7161dc;
+}
+
+.action-card h3 {
+    font-size: 14px;
+    margin: 14px 0 8px;
+}
+
+
+/* =========================================
+   11. AI CHAT INTERFACE
+========================================= */
+
+.chat-page {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 80px);
+}
+
+.chat-heading {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.ai-icon {
+    background: #eeeaff;
+    color: #5d4bc3;
+    padding: 14px;
+    border-radius: 12px;
+    font-size: 23px;
+}
+
+.chat-heading h2 {
+    font-size: 17px;
+}
+
+.chat-heading p {
+    color: #9294a6;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    margin: 25px 0;
+}
+
+.ai-message,
+.user-message {
+    padding: 17px;
+    max-width: 80%;
+    border-radius: 12px;
+    margin: 12px 0;
+    font-size: 13px;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+}
+
+.ai-message {
+    background: #fff;
+    border: 1px solid #ededf3;
+}
+
+.ai-message b {
+    color: #6554ce;
+}
+
+.ai-message p {
+    margin-top: 8px;
+    white-space: pre-wrap;
+}
+
+.user-message {
+    background: #5949bb;
+    color: #fff;
+    margin-left: auto;
+    white-space: pre-wrap;
+}
+
+.suggestions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.suggestions button {
+    padding: 9px 13px;
+    border: 1px solid #dedee9;
+    border-radius: 20px;
+    background: #fff;
+    font-size: 11px;
+}
+
+.chat-input {
+    display: flex;
+    gap: 10px;
+    background: #fff;
+    padding: 10px;
+    border: 1px solid #e5e4ef;
+    border-radius: 12px;
+}
+
+.chat-input input {
+    flex: 1;
+    min-width: 0;
+    border: 0;
+    outline: none;
+    padding: 10px;
+}
+
+.chat-input button {
+    background: #5949bb;
+    color: #fff;
+    border: 0;
+    padding: 10px 18px;
+    border-radius: 8px;
+}
+
+.disclaimer {
+    font-size: 10px;
+    text-align: center;
+    color: #999;
+    margin-top: 12px;
+}
+
+
+/* =========================================
+   12. DOCUMENT UPLOAD
+========================================= */
+
+.upload-box {
+    padding: 45px 20px;
+    margin: 25px 0;
+    background: #fff;
+    border: 2px dashed #a69ae8;
+    text-align: center;
+    border-radius: 15px;
+}
+
+.upload-box h3 {
+    margin: 15px 0 8px;
+}
+
+.upload-box p {
+    color: #9294a6;
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+.upload-box input {
+    max-width: 100%;
+    font-size: 12px;
+}
+
+.document-item,
+.history-item {
+    background: #fff;
+    border: 1px solid #eee;
+    padding: 16px;
+    border-radius: 10px;
+    margin: 10px 0;
+    font-size: 13px;
+}
+
+.document-item p {
+    font-size: 11px;
+    color: #9294a6;
+    margin-top: 6px;
+}
+
+.document-item button {
+    border: 0;
+    color: #b42318;
+    background: #fff;
+    margin-top: 10px;
+}
+
+
+/* =========================================
+   13. TABLET RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 800px) {
+
+    .login-page {
+        grid-template-columns: 1fr;
+    }
+
+    .login-left {
+        display: none;
+    }
+
+    .mobile-brand {
+        display: block;
+    }
+
+    .login-right {
+        min-height: 100vh;
+        padding: 25px;
+    }
+
+    .sidebar {
+        width: 190px;
+        padding: 18px 10px;
+    }
+
+    .content-page {
+        padding: 20px;
+    }
+
+    .stats,
+    .quick-actions {
+        grid-template-columns: 1fr;
+    }
+
+    .welcome-icon {
+        display: none;
+    }
+
+    .topbar {
+        padding: 15px;
+    }
+}
+
+
+/* =========================================
+   14. MOBILE RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 520px) {
+
+    .app-page {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .sidebar .profile {
+        margin: 15px 0;
+    }
+
+    .sidebar .menu-item {
+        display: inline-block;
+        width: 48%;
+        padding: 10px;
+    }
+
+    .sidebar-bottom {
+        margin-top: 15px;
+    }
+
+    .welcome-card h1 {
+        font-size: 22px;
+    }
+
+    .chat-page {
+        height: calc(100vh - 80px);
+    }
+
+    .topbar {
+        height: 70px;
+    }
+
+}
+
+
+/* =========================================
+   15. ROLE DASHBOARD PANELS  (NEW)
+========================================= */
+
+.dash-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 28px;
+}
+
+.dash-panel {
+    background: #fff;
+    border: 1px solid #ededf3;
+    border-radius: 12px;
+    padding: 23px;
+    font-size: 13px;
+    color: #85899c;
+}
+
+.dash-panel h3 {
+    font-size: 15px;
+    color: #202438;
+    margin-bottom: 14px;
+}
+
+.dash-list {
+    padding-left: 18px;
+    line-height: 2;
+    color: #4a4e63;
+}
+
+@media (max-width: 800px) {
+    .dash-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* =========================================
+   16. BUTTONS, FORMS, BADGES, TOASTS
+========================================= */
+
+.btn {
+    padding: 11px 18px;
+    border-radius: 9px;
+    border: 1px solid transparent;
+    font-weight: 600;
+    font-size: 13px;
+    transition: background .15s, border-color .15s;
+}
+
+.btn:disabled { opacity: .6; cursor: not-allowed; }
+.btn-primary { background: #5949bb; color: #fff; }
+.btn-primary:hover:not(:disabled) { background: #4939a6; }
+.btn-ghost { background: #fff; color: #4a4e63; border-color: #dedee9; }
+.btn-ghost:hover:not(:disabled) { border-color: #7161dc; color: #5949bb; }
+.btn-danger { background: #fff; color: #b42318; border-color: #f3c9c5; }
+.btn-danger:hover:not(:disabled) { background: #fff4f3; }
+.small-btn { padding: 7px 12px; font-size: 12px; }
+.push-right { margin-left: auto; }
+
+.form-error {
+    background: #fff1f0;
+    color: #b42318;
+    border: 1px solid #f6cfcb;
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    margin-bottom: 16px;
+    line-height: 1.5;
+}
+
+.panel-card {
+    background: #fff;
+    border: 1px solid #ededf3;
+    border-radius: 14px;
+    padding: 24px;
+    margin: 22px 0;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 18px;
+}
+
+.field.wide { grid-column: 1 / -1; }
+
+.field label,
+.editor-label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 7px;
+    color: #4a4e63;
+}
+
+.field input,
+.field select,
+.editor input[type=text],
+.editor textarea {
+    width: 100%;
+    padding: 11px 12px;
+    border: 1px solid #e1e2eb;
+    border-radius: 9px;
+    font-family: inherit;
+    font-size: 13px;
+    background: #fff;
+    outline: none;
+}
+
+.field input:focus,
+.field select:focus,
+.editor input:focus,
+.editor textarea:focus { border-color: #6554ce; }
+
+.stats { grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); }
+
+.badge {
+    display: inline-block;
+    min-width: 20px;
+    padding: 1px 6px;
+    margin-left: 6px;
+    border-radius: 10px;
+    background: #ff6b6b;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.bell { position: relative; background: none; border: 0; font-size: 20px; padding: 4px; }
+.bell-badge { position: absolute; top: -4px; right: -8px; margin: 0; }
+
+.toasts {
+    position: fixed;
+    top: 90px;
+    right: 24px;
+    z-index: 1200;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 340px;
+}
+
+.toast {
+    background: #191737;
+    color: #fff;
+    padding: 14px 16px;
+    border-radius: 10px;
+    font-size: 13px;
+    line-height: 1.5;
+    box-shadow: 0 8px 24px #0000002e;
+    cursor: pointer;
+    white-space: pre-line;
+    animation: slideIn .25s ease;
+}
+
+.toast.error { background: #b42318; }
+
+@keyframes slideIn { from { transform: translateX(30px); opacity: 0; } to { transform: none; opacity: 1; } }
+
+
+/* =========================================
+   17. QUIZ CARDS, RUNNER, REVIEW
+========================================= */
+
+.quiz-card,
+.result-row {
+    background: #fff;
+    border: 1px solid #ededf3;
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin: 12px 0;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.quiz-card.is-new { border-color: #7161dc; box-shadow: 0 0 0 3px #7161dc1f; }
+.quiz-info { flex: 1; min-width: 200px; }
+.quiz-info h3 { font-size: 15px; margin-bottom: 6px; }
+.quiz-meta { font-size: 12px; color: #85899c; line-height: 1.8; }
+.quiz-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+
+.pill {
+    display: inline-block;
+    padding: 2px 9px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 600;
+    background: #eeeaff;
+    color: #5949bb;
+    margin-right: 6px;
+}
+
+.pill.easy { background: #e5f8ed; color: #137a43; }
+.pill.hard { background: #fdeceb; color: #b42318; }
+.pill.draft { background: #f1f1f7; color: #72758b; }
+.pill.new { background: #ff6b6b; color: #fff; }
+.pill.done { background: #e5f8ed; color: #137a43; }
+
+.runner-top {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background: #f6f7fb;
+    padding: 10px 0 14px;
+}
+
+.runner-top h2 { font-size: 20px; }
+
+.progress { height: 8px; background: #e7e6f3; border-radius: 6px; overflow: hidden; margin-top: 12px; }
+.progress > div { height: 100%; background: #6554ce; width: 0; transition: width .2s; }
+
+.q-card {
+    background: #fff;
+    border: 1px solid #ededf3;
+    border-radius: 12px;
+    padding: 22px;
+    margin: 14px 0;
+}
+
+.q-card h4 { font-size: 15px; line-height: 1.6; margin-bottom: 14px; }
+.q-num { color: #6554ce; margin-right: 6px; }
+
+.opt {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    padding: 12px 14px;
+    border: 1px solid #e5e4ef;
+    border-radius: 9px;
+    margin: 8px 0;
+    font-size: 13px;
+    line-height: 1.5;
+    cursor: pointer;
+}
+
+.opt:hover { border-color: #a69ae8; }
+.opt input { margin-top: 3px; accent-color: #5949bb; }
+.opt.selected { border-color: #6554ce; background: #f5f3ff; }
+.opt.correct { border-color: #2fb36d; background: #eefaf3; }
+.opt.wrong { border-color: #e5675b; background: #fff3f2; }
+.opt.review { cursor: default; }
+
+.explain {
+    margin-top: 12px;
+    padding: 12px 14px;
+    background: #f6f7fb;
+    border-radius: 9px;
+    font-size: 12px;
+    line-height: 1.7;
+    color: #4a4e63;
+}
+
+.score-hero {
+    background: linear-gradient(120deg, #342b79, #7161dc);
+    color: #fff;
+    border-radius: 16px;
+    padding: 28px;
+    text-align: center;
+    margin: 12px 0 22px;
+}
+
+.score-hero .big { font-size: 54px; font-weight: 800; letter-spacing: -1px; }
+.score-hero p { color: #e0ddff; font-size: 14px; margin-top: 6px; }
+
+.table-wrap { overflow-x: auto; background: #fff; border: 1px solid #ededf3; border-radius: 12px; }
+table.data { width: 100%; border-collapse: collapse; font-size: 13px; }
+table.data th { text-align: left; padding: 12px 16px; background: #f6f7fb; color: #72758b; font-size: 11px; letter-spacing: .5px; }
+table.data td { padding: 12px 16px; border-top: 1px solid #f0f0f6; }
+
+.bar { height: 8px; background: #eceaf7; border-radius: 5px; min-width: 90px; overflow: hidden; }
+.bar > div { height: 100%; background: #6554ce; }
+
+.back-link {
+    background: none;
+    border: 0;
+    color: #5949bb;
+    font-weight: 600;
+    font-size: 13px;
+    margin-bottom: 14px;
+    padding: 0;
+}
+
+.empty {
+    text-align: center;
+    color: #9294a6;
+    font-size: 13px;
+    padding: 34px 16px;
+    background: #fff;
+    border: 1px dashed #dedee9;
+    border-radius: 12px;
+}
+
+
+/* =========================================
+   18. QUIZ EDITOR (teacher preview)
+========================================= */
+
+.editor .q-card { position: relative; }
+.editor textarea { min-height: 56px; resize: vertical; margin-bottom: 12px; }
+.editor .opt-row { display: flex; align-items: center; gap: 10px; margin: 8px 0; }
+.editor .opt-row input[type=radio] { accent-color: #2fb36d; }
+.editor .opt-row input[type=text] { flex: 1; }
+.editor .remove-q { position: absolute; top: 14px; right: 14px; }
+.editor-hint { font-size: 11px; color: #9294a6; margin: -4px 0 10px; }
+.publish-bar { display: flex; gap: 10px; flex-wrap: wrap; margin: 18px 0 30px; }
+
+
+/* =========================================
+   19. AI MESSAGES (Markdown) & TAGS
+========================================= */
+
+.md p { white-space: normal; margin: 6px 0; }
+.md ul, .md ol { margin: 6px 0 6px 20px; }
+.md h4 { margin: 10px 0 4px; font-size: 13px; color: #202438; }
+.md code { background: #f1f0fa; padding: 1px 5px; border-radius: 4px; font-size: 12px; }
+.md pre { background: #191737; color: #eceaff; padding: 12px; border-radius: 8px; overflow-x: auto; margin: 8px 0; }
+.md pre code { background: none; padding: 0; color: inherit; }
+
+.msg-tag { display: inline-block; font-size: 10px; color: #85899c; margin-top: 8px; }
+.msg-sources { font-size: 11px; color: #85899c; margin-top: 6px; line-height: 1.6; }
+
+.typing span {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    margin-right: 4px;
+    background: #a69ae8;
+    border-radius: 50%;
+    animation: bounce 1s infinite;
+}
+.typing span:nth-child(2) { animation-delay: .15s; }
+.typing span:nth-child(3) { animation-delay: .3s; }
+@keyframes bounce { 0%, 80%, 100% { transform: scale(.6); opacity: .5; } 40% { transform: scale(1); opacity: 1; } }
+
+.history-item.clickable { cursor: pointer; }
+.history-item.clickable:hover { border-color: #7161dc; }
+
+
+/* =========================================
+   20. FLOATING CHATBOT (bottom-right)
+========================================= */
+
+.bot-fab {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    border: 0;
+    background: linear-gradient(135deg, #5144a9, #8f7dff);
+    color: #fff;
+    font-size: 24px;
+    box-shadow: 0 8px 24px #5144a96b;
+    z-index: 1000;
+    transition: transform .15s;
+}
+
+.bot-fab:hover { transform: scale(1.07); }
+
+.bot-panel {
+    position: fixed;
+    right: 24px;
+    bottom: 94px;
+    width: 380px;
+    height: min(560px, calc(100vh - 120px));
+    background: #fff;
+    border: 1px solid #e5e4ef;
+    border-radius: 16px;
+    box-shadow: 0 16px 48px #1917372e;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 1000;
+}
+
+.bot-head {
+    background: linear-gradient(120deg, #342b79, #7161dc);
+    color: #fff;
+    padding: 14px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bot-head small { display: block; color: #d5d0ff; font-size: 11px; margin-top: 2px; }
+.bot-head button { background: #ffffff22; color: #fff; border: 0; width: 28px; height: 28px; border-radius: 7px; margin-left: 6px; }
+.bot-head button:hover { background: #ffffff40; }
+
+.bot-messages { flex: 1; overflow-y: auto; padding: 14px; background: #f9f9fc; }
+.bot-messages .ai-message,
+.bot-messages .user-message { max-width: 92%; padding: 11px 13px; margin: 8px 0; font-size: 12.5px; line-height: 1.6; }
+
+.bot-chips { display: flex; gap: 6px; flex-wrap: wrap; padding: 8px 12px 0; }
+.bot-chips button { border: 1px solid #dedee9; background: #fff; border-radius: 16px; padding: 6px 10px; font-size: 11px; }
+.bot-chips button:hover { border-color: #7161dc; color: #5949bb; }
+
+.bot-input { display: flex; gap: 8px; padding: 12px; }
+.bot-input input { flex: 1; min-width: 0; border: 1px solid #e1e2eb; border-radius: 9px; padding: 10px 12px; outline: none; font-family: inherit; font-size: 13px; }
+.bot-input input:focus { border-color: #6554ce; }
+.bot-input button { background: #5949bb; color: #fff; border: 0; border-radius: 9px; padding: 0 16px; }
+.bot-input button:disabled, .chat-input button:disabled { opacity: .5; }
+
+body.on-chat-page .bot-fab,
+body.on-chat-page .bot-panel { display: none !important; }
+
+@media (max-width: 520px) {
+    .bot-panel { right: 0; bottom: 0; width: 100%; height: 82vh; border-radius: 16px 16px 0 0; }
+    .bot-fab { right: 16px; bottom: 16px; }
+    .form-grid { grid-template-columns: 1fr; }
+    .toasts { right: 12px; left: 12px; max-width: none; }
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    margin-bottom: 22px;
+}
+
+.remember {
+    display: flex !important;
+    align-items: center;
+    gap: 6px;
+    font-weight: 400 !important;
+    cursor: pointer;
+}
+
+.remember input {
+    width: auto !important;
+    margin: 0 !important;
+}
+
+.form-options a {
+    color: #4f46e5;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.form-options a:hover {
+    text-decoration: underline;
+}
+}
